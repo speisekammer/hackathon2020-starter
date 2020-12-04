@@ -11,10 +11,12 @@ const ItemBlock = (item) => (
     />
     {item.getCount()}x {item.contentString()} {item.name}
     <br />
-    <ul style={{ listStyleType: "none", fontSize: '16px' }}>
+    <ul style={{ listStyleType: "none", fontSize: "16px" }}>
       {item.itemSet.map((set, idx) => {
         return (
-          <li key={idx}>{`${set.count}x with date ${set.date
+          <li key={idx}>{`${
+            set.count
+          }x with date ${set.date
             .toISOString()
             .slice(0, 10)
             .replace(/-/g, "/")}`}</li>

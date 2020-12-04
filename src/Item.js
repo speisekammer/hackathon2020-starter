@@ -1,11 +1,13 @@
-// Definition of an item. This definition should be used if it can be used in your solution
+/**  Definition of an item. This definition should be used if it can be used in your solution */
 class Item {
   /**
-    * @param {string} gtin Global Trade Item Number, see https://en.wikipedia.org/wiki/Global_Trade_Item_Number
-    * @param {string} name Name of the product
-     * @param {string} brand Brand of the product
-
-    */
+   * @param {string} gtin Global Trade Item Number, see https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+   * @param {string} name Name of the product
+   * @param {string} brand Brand of the product
+   * @param {string} productImageUrl URL of the product image
+   * @param {number} content Numerical content of one product, e.g. 1. The parameter "unit" is necessary to interpret this parameter.
+   * @param {string} unit Unit of the contents of one product, e.g. "kg"
+   */
   constructor({ gtin, name, brand, productImageUrl, content, unit }) {
     this.gtin = gtin;
     this.name = name;

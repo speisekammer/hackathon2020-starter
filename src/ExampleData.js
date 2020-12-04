@@ -26,6 +26,14 @@ const items = [
     content: 500,
     unit: "ml",
   }),
+  new Item({
+    gtin: "4305615678474",
+    name: "Bananen Chips",
+    productImageUrl:
+      "https://static.openfoodfacts.org/images/products/430/561/567/8474/front_en.5.100.jpg",
+    content: 150,
+    unit: "g",
+  }),
 ];
 
 // Add some expiration dates
@@ -40,5 +48,9 @@ items[1].addSet(1, new Date("September 01, 2020 20:15:30"));
 items[2].clearItemSet();
 items[2].addSet(1, new Date("August 01, 2020 20:15:30"));
 items[2].addSet(1, new Date("March 01, 2021 20:15:30"));
+
+items[3].clearItemSet();
+items[3].addSet(20, new Date("January 18, 2018 20:01:30"));
+items[3].addSet(18, new Date("February 12, 2018 12:15:30"));
 
 export default items;
