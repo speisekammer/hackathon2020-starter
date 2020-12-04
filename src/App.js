@@ -2,19 +2,19 @@ import "./App.css";
 import items from "./ExampleData.js";
 
 // render an item
-const Item = (item) => (
-  <div style={{ clear: "both" }}>
+const ItemBlock = (item) => (
+  <div style={{ clear: "both" }} key={item.gtin}>
     <img
       src={item.productImageUrl}
       alt="ProductImage"
       style={{ margin: 5, float: "left" }}
     />
-    {item.contentString()} {item.name}
+    {item.getCount()}x {item.contentString()} {item.name}
     <br />
-    <ul style={{ listStyleType: "none" }}>
-      {item.itemSet.map((set) => {
+    <ul style={{ listStyleType: "none", fontSize: '16px' }}>
+      {item.itemSet.map((set, idx) => {
         return (
-          <li>{`${set.count}x with date ${set.date
+          <li key={idx}>{`${set.count}x with date ${set.date
             .toISOString()
             .slice(0, 10)
             .replace(/-/g, "/")}`}</li>
@@ -31,7 +31,7 @@ function App() {
       <header className="App-header">
         <h1>Pantry Overview</h1>{" "}
         <ul style={{ listStyleType: "none" }}>
-          <li>{items.map((item) => Item(item))}</li>
+          <li>{items.map((item) => ItemBlock(item))}</li>
         </ul>
         <p>
           Edit <code>src/App.js</code> and save to reload.
